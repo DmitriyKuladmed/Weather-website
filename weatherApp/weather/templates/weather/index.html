@@ -9,40 +9,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand">IT OVERONE</a>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'page' %}">Страница</a>
-          </li>
-        </ul>
-      </div>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">IT OVERONE</a>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'page' %}">Страница</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-</div>
-<br>
-<div class="container mt-5">
-    <div row="row">
-        <div class='col-5 offset-1'>
-            <form action="">
-                <label for="city">Город</label>
-                <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
-                <input type="submit" name="Отправить" value="Узнать" class="mt-2 btn btn-danger">
-            </form>
-            <div class="col-4 offset-1">
-                <h1>Информация</h1>
-                <div class="alert alert-danger">
-                    Погода в Минске
+    <div class="container mt-5">
+        <div class="row">
+            <div class='col-5 offset-1'>
+                <form action="">
+                    <label for="city">Город</label>
+                    <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
+                    <input type="submit" name="Отправить" value="Узнать" class="mt-2 btn btn-danger">
+                </form>
+                <div class="col-10 offset-0">
+                    <h1>Информация</h1>
+                    <div class="alert alert-danger">
+                        <div class="alert alert-danger">
+                            <b>Город:&nbsp</b>{{ info.city }}<br>
+                            <b>Температура:&nbsp</b>{{ info.temp }}<sup>0</sup><br>
+                            <b>Скорость ветра (м/с):&nbsp</b>{{ info.wind }}<br>
+                        </div>
+                            <div class="col-2 offset-5">
+                                <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="img-thunbnail">
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>
