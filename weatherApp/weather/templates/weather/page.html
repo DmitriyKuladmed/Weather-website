@@ -12,10 +12,7 @@
 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">IT OVERONE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand">IT OVERONE</a>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
@@ -30,6 +27,22 @@
   </nav>
 </div>
 <br>
-<h1>Погодное приложение</h1>
+<div class="container mt-5">
+    <div row="row">
+        <div class='col-5 offset-1'>
+            <form action="">
+                <label for="city">Город</label>
+                <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
+                <input type="submit" name="Отправить" value="Узнать" class="mt-2 btn btn-danger">
+            </form>
+            <div class="col-4 offset-1">
+                <h1>Информация</h1>
+                <div class="alert alert-danger">
+                    Погода в Минске
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
